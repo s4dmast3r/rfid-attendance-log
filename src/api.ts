@@ -1,13 +1,16 @@
-// src/api.ts
 export type AttendanceRow = {
   id: number;
   name: string;
   card_uid: string;
   direction: "IN" | "OUT";
-  ts: string; // "YYYY-MM-DD HH:MM:SS"
+  ts: string;
 };
 
-export type PresentRow = { id: number; name: string; card_uid: string };
+export type PresentRow = {
+  id: number;
+  name: string;
+  card_uid: string;
+};
 
 async function handle(r: Response) {
   const data = await r.json().catch(() => ({}));
